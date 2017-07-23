@@ -1,56 +1,60 @@
 Rails.application.routes.draw do
   
-  devise_for :users
+  devise_for :users, 
+                      :path => '', 
+                      :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => 'register', :edit => 'profile'}
+  
+  root to: "home"
+  
+  get 'home' , to: 'pages#home'
 
-  get 'pages/home'
+  get 'about' , to: 'pages#about'
 
-  get 'pages/about'
+  get 'contact' , to: 'pages#contact'
 
-  get 'pages/contact'
+  get 'faq' , to: 'pages#faq'
 
-  get 'pages/faq'
+  get 'knowledgecenter' , to: 'pages#knowledgecenter'
 
-  get 'pages/knowledgecenter'
+  get 'howitworks' , to: 'pages#howitworks'
 
-  get 'pages/howitworks'
+  get 'infrastructure' , to: 'pages#infrastructure'
 
-  get 'pages/infrastructure'
+  get 'defensecontracts' , to: 'pages#defensecontracts'
 
-  get 'pages/defensecontracts'
+  get 'importexport' , to: 'pages#importexport'
 
-  get 'pages/importexport'
+  get 'agriculture' , to: 'pages#agriculture'
 
-  get 'pages/agriculture'
+  get 'construction' , to: 'pages#construction'
 
-  get 'pages/construction'
+  get 'textile' , to: 'pages#textile'
 
-  get 'pages/textile'
+  get 'startups' , to: 'pages#startups'
 
-  get 'pages/startups'
+  get 'team' , to: 'pages#team'
 
-  get 'pages/team'
+  get 'press' , to: 'pages#press'
 
-  get 'pages/press'
+  get 'jobs' , to: 'pages#jobs'
 
-  get 'pages/jobs'
+  get 'sell' , to: 'pages#sell'
 
-  get 'pages/sell'
+  get 'buy' , to: 'pages#buy'
 
-  get 'pages/buy'
+  get 'regulationa' , to: 'pages#regulationa'
 
-  get 'pages/regulationa'
+  get 'factoring101' , to: 'pages#factoring101'
 
-  get 'pages/factoring101'
+  get 'equitycrowdfunding' , to: 'pages#equitycrowdfunding'
 
-  get 'pages/equitycrowdfunding'
+  get 'whitepapers' , to: 'pages#whitepapers'
 
-  get 'pages/whitepapers'
+  get 'blog' , to: 'pages#blog'
 
-  get 'pages/blog'
+  get 'terms' , to: 'pages#terms'
 
-  get 'pages/terms'
+  get 'privacy' , to: 'pages#privacy'
 
-  get 'pages/privacy'
-
-  get 'pages/legaldocs'
+  get 'legaldocs' , to: 'pages#legaldocs'
 end
