@@ -1,2 +1,146 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% if !user_signed_in? %>
+   <div class="container content">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <h3 id="headline home">We provide immediate cash for
+        <div id="typed"></div>invoices.</h3>
+        <p class="head">Wefactoryou gives you $5,000 - $50 million in affordable working capital by advancing your money trapped in unpaid invoices.</p>
+        <br>
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <center><%= link_to 'Sell invoices', new_user_registration_path, :class => "btn btn-secondary" %></center>
+            <br/>
+            <center>3% discount guaranteed</center>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+        <br/>
+        <br/>
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8 banner">
+            <center><%= link_to 'Invest in us', new_user_registration_path, :class => "btn btn-secondary" %></center>
+            <br/>
+            <center>12% fixed rate</center>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="container devise home">
+          <br/>
+
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+
+            <div class="field">
+              <%= f.select :sales, [["$1 to $50,000"], ["$50,001 to $99,999"], ["$100,000 to $150,000"], ["$150,001 to $199,999"], ["$200,000 to $250,000"]], prompt: "What are your monthly sales?" %>
+            </div>
+
+            <br/>
+
+            <div class="field">
+              <%= f.text_field :name, autofocus: true, :placeholder => "Your Full Name" %>
+            </div>
+
+            <br/>
+
+            <div class="field">
+              <%= f.text_field :company, autofocus: true, :placeholder => "Company Name" %>
+            </div>
+
+            <br/>
+
+            <div class="field">
+              <%= f.email_field :email, autofocus: true, :placeholder => "Email Address" %>
+            </div>
+
+            <div class="field">
+              <% if @minimum_password_length %>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "off", :placeholder => "Password" %>
+            </div>
+
+            <br/>
+
+            <div class="actions">
+              <%= f.submit "Sign up", :class => "btn btn-primary" %>
+            </div>
+          <% end %>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="container roi">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <center><h3>Get cash fast</h3></center>
+        <div class="or"> <h6>or</h6></div>
+        <center><h3>Earn 12% ROI</h3></center>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <div class="row">
+      <div class="col-md-4 process">
+        <center>
+          <%= image_tag('invoice.png', :height => 50, alt: 'invoice', :class => "cash") %>
+          <h5>Sell or Buy Invoices</h5>
+        </center>
+      </div>
+      <div class="col-md-4 process">
+        <center>
+          <%= image_tag('cash.png', :height => 50, alt: 'cash', :class => "cash") %>
+          <h5>Get cash or earn 12% ROI</h5>
+        </center>
+      </div>
+      <div class="col-md-4 process">
+        <center>
+          <%= image_tag('repeat.png', :height => 50, alt: 'repeat', :class => "cash") %>
+          <h5>Repeat</h5>
+        </center>
+      </div>
+    </div>
+    <div>
+      <center><%= link_to 'How it works', new_user_registration_path, :class => "btn btn-secondary" %></center>
+    </div>
+  </div>
+  <div class="container facts">
+    <div class="row">
+      <div class="col-md-4 numbers">
+        <center><h2>20,000<br/>Investors</h2></center>
+      </div>
+      <div class="col-md-4 numbers">
+        <center><h2>$41M in <br/>Available Funding</h2></center> 
+      </div>
+      <div class="col-md-4 numbers">
+        <center><h2>1600+<br/>Businesses</h2></center>
+      </div>
+    </div>
+  </div>
+  <div class="container feedback">
+    <center><h3>What people are saying</h3></center> 
+    <hr>
+    <div class="container comment">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <center><%= image_tag('client.jpg', alt: 'client', :class => "image feedback") %></center>
+          <br/>
+          <center><h4><strong>Jim L, Startup CEO</strong></h4></center>
+          <br/>
+          <p>We needed cash fast to meet payroll. We were sitting on $1M of receivables from customers with varying credit ratings. One call and Wefactoryou was there. Wefactoryou wired us $850K within 24 hours. Wefactoryou made it happen!</p>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
