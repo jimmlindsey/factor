@@ -1,0 +1,47 @@
+<div class="container devise">
+  <center><h2>Create an Account</h2></center>
+
+  <br/>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="field">
+      <%= f.select :sales, [["$1 to $50,000"], ["$50,001 to $99,999"], ["$100,000 to $150,000"], ["$150,001 to $199,999"], ["$200,000 to $250,000"]], prompt: "What are your monthly sales?" %>
+    </div>
+
+    <br/>
+
+    <div class="field">
+      <%= f.text_field :name, autofocus: true, :placeholder => "Your Full Name" %>
+    </div>
+
+    <br/>
+
+    <div class="field">
+      <%= f.text_field :company, autofocus: true, :placeholder => "Company Name" %>
+    </div>
+
+    <br/>
+
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, :placeholder => "Email Address" %>
+    </div>
+
+    <div class="field">
+      <% if @minimum_password_length %>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off", :placeholder => "Password" %>
+    </div>
+
+    <br/>
+
+    <div class="actions">
+      <%= f.submit "Sign up", :class => "btn btn-primary" %>
+    </div>
+  <% end %>
+
+  <br/>
+
+  <%= render "devise/shared/links" %>
+</div>
