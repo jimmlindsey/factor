@@ -17,6 +17,7 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
 gem "paperclip", "~> 5.0.0"
+gem 'activeadmin', github: 'activeadmin'
 
 group :development, :test do
   gem 'sqlite3'
