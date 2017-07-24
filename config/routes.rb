@@ -4,6 +4,8 @@ Rails.application.routes.draw do
                       :path => '', 
                       :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => 'register', :edit => 'profile'}
   
+  resources :users, only: [:show]
+  
   root to: "pages#home"
   
   get 'home' , to: 'pages#home'

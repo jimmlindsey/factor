@@ -1,0 +1,43 @@
+<style>
+  body {background-color: #fafafa;}
+</style>
+
+<% if @user == current_user %>
+
+<div class="container user">
+<br>
+  <div class="panel show">
+    <div class="panel-heading"></div>
+      <div class="container post">
+      <br>
+      <% if @user == current_user %>
+      <span class="pull-right profile"><%= link_to 'Edit Profile', edit_user_registration_path, :class => "btn btn-profile" %></span>
+      <br>
+      <br>
+      <br>
+      <% else %>
+      <% end %>
+      <div>
+      <span class="pull-left image-60"><%= image_tag(@user.avatar.url(:thumb)) %></span>
+      <span class="user-info"><h3><%= @user.company %></h3></span>
+      </div>
+      <% if @user.address.present? %>
+      <%= @user.address %>
+      <% end %>
+      <br>
+      <br>
+      <br>
+      <%= @user.name %>:
+      <% if @user.title.present? %>
+      <%= @user.title %>
+      <% end %>
+      <br>
+      <% if @user.phone_number.present? %>
+      <%= @user.phone_number %>
+      <% end %>
+      <br>
+      </div>
+  </div>
+</div>
+
+<% end %>
