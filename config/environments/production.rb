@@ -86,5 +86,5 @@ Rails.application.configure do
   
   # Required for Heroku
   # Note to set this to your actual host
-  config.action_mailer.default_url_options = { host: 'https://arcane-hamlet-77765.herokuapp.com/' }
+  config.action_mailer.default_url_options = { host: 'https://arcane-hamlet-77765.herokuapp.com' }
 end
