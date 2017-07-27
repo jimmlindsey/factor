@@ -59,7 +59,7 @@ Rails.application.configure do
     port: 587,
     enable_starttls_auto: true,
     user_name: 'factoring',
-    password: 'Foamposite1',
+    password: 'Jumpman23',
     authentication: 'plain'
 }
 end
