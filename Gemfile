@@ -20,7 +20,6 @@ gem "paperclip", "~> 5.0.0"
 gem 'activeadmin', github: 'activeadmin'
 gem 'active_skin'
 gem 'sendgrid-rails', '~> 2.0', '>= 2.0.5'
-gem "figaro"
 
 group :development, :test do
   gem 'sqlite3'
